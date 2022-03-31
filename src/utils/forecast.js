@@ -10,10 +10,11 @@ const forecast = (lat, long, callback) => {
     } else {
       const realTemp = body.current.temperature;
       const feelsLike = body.current.feelslike;
+      const humidity = body.current.humidity;
       const forecast = body.current.weather_descriptions[0];
       callback(
         undefined,
-        `The forescast is ${forecast}, and currently ${realTemp} degrees, while it currently feels like ${feelsLike} degrees.`
+        `The forescast is ${forecast} with ${humidity}% humidity, and it's currently ${realTemp} degrees, while it currently feels like ${feelsLike} degrees.`
       );
     }
   });
